@@ -1,0 +1,14 @@
+.gif {
+    margin: 1rem;
+    justify-content: center;
+    border-radius: 15px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    
+  }
+
+  .gif img {
+    width: auto;
+    height: 250px;
+  }
