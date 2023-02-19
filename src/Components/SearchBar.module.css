@@ -1,0 +1,22 @@
+.form div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.form input {
+  padding: 10px;
+  width: 80%;
+}
+
+.button {
+  padding: 10px;
+  background-color: #15ea98;
+  border-radius: 15px;
+  border-color: dimgray;
+  border-width: 0.25px;
+  color: white;
+  font-weight: bolder;
+  font-size: 1rem;
+}

@@ -3,10 +3,11 @@ import classes from './Gif.module.css';
 
 const Gif = (props) => {
     return (
-        <li className={classes.gif}>
+        <div className={classes.gif}>
             <p>{props.id}</p>
             <img src={props.url} alt='this a gif jah feel'/>
-        </li>
+            <button>SAVE</button>
+        </div>
     );
 };
 

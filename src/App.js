@@ -1,12 +1,17 @@
 
-import "./App.css";
-import TopTenGif from "./Components/TopTenGif";
+import classes from './App.css';
+import HomeSearchPage from "./Components/HomeSearchPage";
+import NavBar from "./Components/NavBar";
+
 
 function App() {
 
 
-  return <div className="App">
-    <TopTenGif />
+  return <div className={classes.app}>
+    <NavBar /> 
+    <HomeSearchPage />
+    
+  
   </div>;
 }
 
