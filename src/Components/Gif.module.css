@@ -8,23 +8,29 @@
   transition: all 500ms;
   overflow: hidden;
 
+  background-color: #BB11BC;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
 
+  border-radius: 25px;
   border-style: solid;
+  box-shadow: 4px 4px 4px #00d680;
 }
 
 .gif img {
   height: 240px;
   width: auto;
   margin-bottom: 5px;
+  border-radius: 5px;
 }
 
 .gif button {
   margin: 3px;
   color: white;
-  background-color: #15ea98;
+  background-color: #00d680;
   border-radius: 5px;
+  border-style: none;
   padding: 3px;
+  margin-bottom: 15px;
 }

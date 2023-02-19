@@ -12,7 +12,8 @@
 
 .button {
   padding: 10px;
-  background-color: #15ea98;
+  margin-top: 10px;
+  background-color: #00d680;
   border-radius: 15px;
   border-color: dimgray;
   border-width: 0.25px;
