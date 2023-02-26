@@ -17,7 +17,12 @@
   border-radius: 15px;
   border-color: dimgray;
   border-width: 0.25px;
+  box-shadow: 2px 2px 2px #BB11BC;
   color: white;
   font-weight: bolder;
   font-size: 1rem;
+}
+
+.button:hover{
+  background-color: #BB11BC;
 }

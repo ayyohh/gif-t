@@ -1,10 +1,28 @@
 .navBar {
-    display: flex;
-    justify-content: space-evenly;
-    background-color: #bc10bc;
-    color: #dff6ff;
-    font-size: large;
-    font-weight: bolder;
-   align-items: center;
-   padding-bottom: 10px;
-} 
+  display: flex;
+  justify-content: space-evenly;
+  background-color: #bc10bc;
+  font-size: large;
+  font-weight: bolder;
+  align-items: center;
+  padding-bottom: 10px;
+  text-decoration: none;
+}
+
+.linkButtons {
+  background-color: #00d680;
+  border-radius: 15px;
+  padding: 10px;
+  margin-top: 10px;
+  box-shadow: 2px 2px 2px #161b22;
+}
+
+.linkButtons a {
+  color: white;
+  text-align: center;
+  text-decoration: none;
+}
+
+.linkButtons:hover {
+  background-color: #161b22;
+}

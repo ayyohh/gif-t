@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useCallback } from "react";
-import GifList from "../Gifs/GifList";
+import GifList from "../../Components/Gifs/GifList";
 import SearchBar from "./SearchBar";
 import classes from './HomeSearchPage.module.css';
 
