@@ -8,7 +8,7 @@ const HomeSearchPage = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
   const [api, setAPI] = useState(
-    "https://api.giphy.com/v1/gifs/trending?api_key=ex0CE5B4EQlLcMGN3vFU5NaEzdiVnJV9&limit=10&rating=r"
+    "https://api.giphy.com/v1/gifs/trending?api_key=ex0CE5B4EQlLcMGN3vFU5NaEzdiVnJV9&limit=12&rating=r"
   );
 
   const searchBarValueHandler = (searchQuery) => {

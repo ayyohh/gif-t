@@ -8,9 +8,19 @@ router.route("/").get((req, res) => {
 });
 
 router.route("/add").post((req, res) => {
+  const id = req.body.id;
   const username = req.body.username;
+  const name = req.body.name;
+  const city = req.body.city;
+  const gifs = req.body.gifs;
 
-  const newUser = new User({ username });
+  const newUser = new User({
+    id,
+    username,
+    name,
+    city,
+    gifs,
+  });
 
   newUser
     .save()

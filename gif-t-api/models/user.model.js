@@ -4,12 +4,30 @@ const Schema = mongoose.Schema;
 
 const userSchema = new Schema(
   {
+    id: {
+      type: String,
+      required: true,
+      unique: true,
+      trim: true,
+    },
     username: {
       type: String,
       required: true,
       unique: true,
       trim: true,
       minlength: 3,
+    },
+    name: {
+      type: String,
+      required: false,
+      unique: false,
+      trim: true,
+    },
+    city: {
+      type: String,
+      required: false,
+      unique: false,
+      trim: true,
     },
     gifs: {
       type: Array,

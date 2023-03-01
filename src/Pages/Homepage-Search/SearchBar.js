@@ -12,6 +12,7 @@ const SearchBar = (props) => {
         //prevents page from being reloaded by default
         event.preventDefault();
 
+        //this takes search and makes it able to go to the api call with ease
         const urlSearch = enteredName.replace(/ /g, "+");
         props.onSaveSearchQuery(urlSearch);
         setEnteredName("");
@@ -27,7 +28,6 @@ const SearchBar = (props) => {
                     onChange={nameInputChangeHandler}
                 />
                 <button className={classes.button}>SEARCH</button>
-                <p>{enteredName}</p>
             </div>
         </form>
     );
