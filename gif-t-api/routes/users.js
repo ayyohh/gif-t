@@ -8,14 +8,14 @@ router.route("/").get((req, res) => {
 });
 
 router.route("/add").post((req, res) => {
-  const id = req.body.id;
+  const userID = req.body.userID;
   const username = req.body.username;
   const name = req.body.name;
   const city = req.body.city;
   const gifs = req.body.gifs;
 
   const newUser = new User({
-    id,
+    userID,
     username,
     name,
     city,
@@ -28,9 +28,13 @@ router.route("/add").post((req, res) => {
     .catch((err) => res.status(400).json("Error: " + err));
 });
 
-router.route("/:id").get((req, res) => {
-  User.findById(req.params.id)
-    .then((user) => res.json(user))
+router.route("/:userID").get((req, res) => {
+  console.log(req.params.userID);
+  User.findOne({ userID: req.params.userID })
+
+    .then((user) => {
+      res.json(user);
+    })
     .catch((err) => res.status(400).json("Error: " + err));
 });
 
