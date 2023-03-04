@@ -1,9 +1,11 @@
+import { useAuth0 } from "@auth0/auth0-react";
 import React, { useState, useEffect, useCallback } from "react";
 import GifList from "../../Components/Gifs/GifList";
 import SearchBar from "./SearchBar";
-import classes from './HomeSearchPage.module.css';
+import classes from "./HomeSearchPage.module.css";
 
 const HomeSearchPage = () => {
+  const { user } = useAuth0();
   const [gif, setGif] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
@@ -17,6 +19,28 @@ const HomeSearchPage = () => {
       `https://api.giphy.com/v1/gifs/search?api_key=ex0CE5B4EQlLcMGN3vFU5NaEzdiVnJV9&q=${searchData}&limit=20&offset=10&rating=r&lang=en`
     );
     console.log(searchData);
+  };
+
+  const getInfoFromGifList = (url) => {
+    console.log(url)
+    console.log(user);
+
+        const getUserID = user.sub.split("|");
+        const userID = getUserID[1];
+
+    fetch("http://localhost:5001/gifs/add", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          url: url,
+          user: userID,
+        }),
+      })
+        .then((res) => {
+          return res.json();
+        })
+        .then((data) => console.log(data))
+        .catch((error) => console.log("Error"));
   };
 
   const fetchData = useCallback(async () => {
@@ -52,9 +76,9 @@ const HomeSearchPage = () => {
     <div className={classes.mainDiv}>
       <header>
         <h1>Gif't</h1>
-        </header>
+      </header>
       <SearchBar onSaveSearchQuery={searchBarValueHandler} />
-      {!isLoading && <GifList gif={gif} />}
+      {!isLoading && <GifList gif={gif} onSaveGifListInfo={getInfoFromGifList} />}
       {!isLoading && error && <p>{error}</p>}
       {isLoading && <p>Loading...</p>}
     </div>

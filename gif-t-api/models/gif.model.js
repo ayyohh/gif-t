@@ -7,12 +7,13 @@ const GifSchema = new Schema(
     url: {
       type: String,
       required: true,
+      unique: true,
       
     },
-    gifs: {
-      type: Array,
+    user: {
+      type: String,
       required: false,
-    },
+    }
   },
   {
     timestamps: true,

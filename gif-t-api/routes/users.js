@@ -44,10 +44,10 @@ router.route("/:id").delete((req, res) => {
     .catch((err) => res.status(400).json("Error: " + err));
 });
 
-router.route("/update/:id").post((req, res) => {
-  User.findById(req.params.id)
+router.route("/update/:").post((req, res) => {
+  User.findOne({ userID: req.params.userID })
     .then((user) => {
-      user.username = req.body.username;
+      user.gifs= req.body.gifs;
 
       user
         .save()

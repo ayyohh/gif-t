@@ -20,8 +20,10 @@ connection.once("open", () => {
 });
 
 const usersRouter = require("./routes/users");
+const gifsRouter = require("./routes/gifs");
 
 app.use("/users", usersRouter);
+app.use("/gifs", gifsRouter);
 
 app.listen(port, () => {
   console.log(`Server running on port: ${port}`);

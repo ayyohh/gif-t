@@ -9,8 +9,9 @@ router.route("/").get((req, res) => {
 
 router.route("/add").post((req, res) => {
   const url = req.body.url;
+  const user = req.body.user;
 
-  const newGif = new Gif({ url });
+  const newGif = new Gif({ url, user });
 
   newGif
     .save()
