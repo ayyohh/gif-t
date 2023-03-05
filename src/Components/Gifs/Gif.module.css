@@ -31,6 +31,11 @@
   background-color: #00d680;
   border-radius: 5px;
   border-style: none;
+  box-shadow: 2px 2px 2px #161b22;
   padding: 3px;
   margin-bottom: 15px;
+}
+
+.gif button:hover {
+  background-color: #161b22;
 }

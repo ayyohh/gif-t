@@ -7,7 +7,6 @@ const ProfilePage = (props) => {
   const { user } = useAuth0();
   const [id, setId] = useState("");
   const [showForm, setShowForm] = useState(true);
-  const [userInfo, setUserInfo] = useState('');
 
 
 
@@ -18,10 +17,9 @@ const ProfilePage = (props) => {
       } else {
         //user.sub is id from auth0, first part is google or auth so split at | and access just the number
         // which we'll use as id for user profile in our database
-        const userSub = user.sub;
-        const getUserID = userSub.split("|");
+        const getUserID = user.sub.split("|");
         const userID = getUserID[1];
-        setId(getUserID[1]);
+        setId(userID);
 
         const response = await fetch(`http://localhost:5001/users/${userID}`);
 
@@ -31,19 +29,12 @@ const ProfilePage = (props) => {
 
         const data = await response.json();
 
-        const userDAT = {
-          ...data
-        }
-        setUserInfo(userDAT);
-        console.log(userDAT, 'this is userDATf');
-
         if (data === null) {
           setShowForm(true);
         } else {
           setShowForm(false);
         }
         
-        console.log(data, "this is data from response.json");
       }
       
     } catch (error) {
@@ -54,8 +45,6 @@ const ProfilePage = (props) => {
   }, [user]);
 
 
-   
-  console.log(userInfo, 'this is user info');
   
   const formInfoHandler = useCallback(
     (formData) => {
